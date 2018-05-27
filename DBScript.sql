@@ -14,20 +14,20 @@ CREATE TABLE EMPRESA(
 idEmpresa int identity(1,1) primary key not null,
 telefono varchar(30),
 nombre varchar(200),
-codMedico int foreign key(codMedico) references MEDICOS(codMedico), 
+codMedico int foreign key(codMedico) references MEDICOS(codMedico),
 institucion varchar(100),
 gerencia varchar(100),
 tituloReporte varchar(100))
-
+-- tabla sexo, simplemente para que sea mas facil elegir uno u otro --
 CREATE TABLE SEXO(
 nSexo varchar(1) primary key not null)
-
+-- tabla clientes --
 CREATE TABLE CLIENTES(
 idCliente int identity(1,1) primary key not null,
 nombre varchar(200),
-edadAños int,
+edadAnos int,
 edadMeses int,
 nSexo varchar(1) foreign key (nSexo) references SEXO(nSexo),
 descripcion varchar(500),
 idEmpresa int foreign key(idEmpresa) references EMPRESA(idEmpresa),
-afiliacion varchar(100))
+afiliacion varchar(100)) --afiliacion a la empresa-
